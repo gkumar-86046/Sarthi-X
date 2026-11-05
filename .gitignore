@@ -1,0 +1,21 @@
+@'
+
+# Node dependencies
+**/node_modules/
+node_modules/
+
+# Environment secrets
+.env
+.env.*
+!.env.example
+
+# Python
+__pycache__/
+*.pyc
+venv/
+.venv/
+
+# Build files
+dist/
+build/
+'@ | Add-Content .gitignore

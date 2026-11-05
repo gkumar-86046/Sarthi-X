@@ -1,0 +1,790 @@
+/* ==========================================================================
+   Magic Number Aptitude Arena - Cyber Space & Gaming HUD Styles
+   ========================================================================== */
+
+.mna-container {
+  position: relative;
+  width: 100%;
+  max-width: 980px;
+  margin: 0 auto 30px auto;
+  border-radius: 20px;
+  background: radial-gradient(circle at 50% 0%, rgba(30, 27, 75, 0.85) 0%, rgba(15, 23, 42, 0.95) 100%);
+  border: 1px solid rgba(99, 102, 241, 0.35);
+  box-shadow: 0 16px 40px -10px rgba(0, 0, 0, 0.7), 0 0 35px rgba(99, 102, 241, 0.2);
+  backdrop-filter: blur(16px);
+  color: #f8fafc;
+  overflow: hidden;
+  font-family: inherit;
+  animation: mnaFadeIn 0.35s ease-out;
+}
+
+@keyframes mnaFadeIn {
+  from { opacity: 0; transform: translateY(12px) scale(0.99); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* ── Top HUD Bar ─────────────────────────────────────────────────────────── */
+.mna-hud-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 24px;
+  background: rgba(15, 23, 42, 0.6);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.mna-hud-left {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.mna-level-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: linear-gradient(135deg, #6366f1, #4f46e5);
+  color: #ffffff;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  box-shadow: 0 0 15px rgba(99, 102, 241, 0.4);
+}
+
+.mna-hud-stats {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.mna-stat-badge {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #cbd5e1;
+}
+
+.mna-score-val {
+  color: #fbbf24;
+  font-weight: 800;
+  font-size: 15px;
+}
+
+.mna-streak-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: rgba(249, 115, 22, 0.18);
+  color: #fb923c;
+  border: 1px solid rgba(249, 115, 22, 0.4);
+  padding: 3px 10px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 700;
+  animation: mnaPulseStreak 1.8s infinite;
+}
+
+@keyframes mnaPulseStreak {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(249, 115, 22, 0.4); }
+  50% { box-shadow: 0 0 12px 2px rgba(249, 115, 22, 0.6); }
+}
+
+.mna-lives {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.mna-heart {
+  font-size: 16px;
+  transition: transform 0.2s, opacity 0.2s;
+}
+
+.mna-heart.lost {
+  opacity: 0.25;
+  filter: grayscale(1);
+}
+
+.mna-hud-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.mna-hud-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #e2e8f0;
+  padding: 6px 12px;
+  border-radius: 10px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.mna-hud-btn:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.25);
+  transform: translateY(-1px);
+}
+
+.mna-hud-btn.gold {
+  color: #fde047;
+  border-color: rgba(250, 204, 21, 0.35);
+  background: rgba(250, 204, 21, 0.08);
+}
+
+.mna-hud-btn.gold:hover {
+  background: rgba(250, 204, 21, 0.16);
+  box-shadow: 0 0 12px rgba(250, 204, 21, 0.25);
+}
+
+/* ── Timer Progress Line ─────────────────────────────────────────────────── */
+.mna-timer-track {
+  width: 100%;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.06);
+  position: relative;
+  overflow: hidden;
+}
+
+.mna-timer-fill {
+  height: 100%;
+  transition: width 0.1s linear, background-color 0.3s;
+}
+
+/* ── Game Content Body ───────────────────────────────────────────────────── */
+.mna-body {
+  padding: 28px 28px 36px 28px;
+}
+
+.mna-question-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.mna-topic-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(6, 182, 212, 0.12);
+  color: #22d3ee;
+  border: 1px solid rgba(6, 182, 212, 0.3);
+  padding: 3px 10px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.mna-progress-count {
+  font-size: 13px;
+  color: #94a3b8;
+  font-weight: 600;
+}
+
+.mna-prompt-box {
+  background: rgba(15, 23, 42, 0.45);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  padding: 22px 24px;
+  margin-bottom: 24px;
+  position: relative;
+}
+
+.mna-prompt-text {
+  font-size: 19px;
+  font-weight: 600;
+  line-height: 1.5;
+  color: #ffffff;
+  margin: 0;
+}
+
+/* ── 4-Option Grid ───────────────────────────────────────────────────────── */
+.mna-options-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+  margin-bottom: 24px;
+}
+
+@media (max-width: 640px) {
+  .mna-options-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.mna-option-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(30, 41, 59, 0.6);
+  border: 1.5px solid rgba(255, 255, 255, 0.1);
+  color: #e2e8f0;
+  padding: 16px 20px;
+  border-radius: 12px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  outline: none;
+}
+
+.mna-option-btn:hover:not(:disabled) {
+  background: rgba(51, 65, 85, 0.8);
+  border-color: rgba(99, 102, 241, 0.5);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+}
+
+.mna-option-btn:disabled {
+  cursor: default;
+}
+
+.mna-option-key {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 7px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  font-size: 12px;
+  font-weight: 700;
+  color: #94a3b8;
+  margin-right: 12px;
+  flex-shrink: 0;
+}
+
+.mna-option-text {
+  flex-grow: 1;
+}
+
+/* Option States */
+.mna-option-btn.correct {
+  background: rgba(16, 185, 129, 0.15) !important;
+  border-color: #10b981 !important;
+  color: #34d399 !important;
+  box-shadow: 0 0 20px rgba(16, 185, 129, 0.3) !important;
+}
+
+.mna-option-btn.wrong {
+  background: rgba(239, 68, 68, 0.15) !important;
+  border-color: #ef4444 !important;
+  color: #f87171 !important;
+  animation: mnaShake 0.4s ease-in-out;
+}
+
+@keyframes mnaShake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-6px); }
+  75% { transform: translateX(6px); }
+}
+
+/* ── Feedback Banner & Trick Card ────────────────────────────────────────── */
+.mna-feedback-box {
+  background: rgba(15, 23, 42, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 14px;
+  padding: 20px 24px;
+  margin-bottom: 24px;
+  animation: mnaSlideUp 0.3s ease-out;
+}
+
+@keyframes mnaSlideUp {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.mna-feedback-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
+}
+
+.mna-feedback-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.mna-feedback-title.correct {
+  color: #34d399;
+}
+
+.mna-feedback-title.wrong {
+  color: #f87171;
+}
+
+.mna-bonus-tag {
+  background: rgba(250, 204, 21, 0.15);
+  color: #fde047;
+  border: 1px solid rgba(250, 204, 21, 0.3);
+  padding: 3px 8px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+/* ⚡ The Magic Trick Box */
+.mna-trick-card {
+  background: linear-gradient(135deg, rgba(250, 204, 21, 0.08) 0%, rgba(249, 115, 22, 0.05) 100%);
+  border: 1px solid rgba(250, 204, 21, 0.3);
+  border-radius: 10px;
+  padding: 14px 16px;
+  margin-bottom: 12px;
+}
+
+.mna-trick-label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #fde047;
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 6px;
+}
+
+.mna-trick-content {
+  font-size: 14px;
+  line-height: 1.5;
+  color: #fef08a;
+  margin: 0;
+}
+
+/* 📐 The Classical Method Box */
+.mna-method-card {
+  background: rgba(30, 41, 59, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 10px;
+  padding: 12px 16px;
+}
+
+.mna-method-label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #94a3b8;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+.mna-method-content {
+  font-size: 13px;
+  line-height: 1.5;
+  color: #cbd5e1;
+  margin: 0;
+}
+
+/* ── Bottom Controls ─────────────────────────────────────────────────────── */
+.mna-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.mna-next-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(135deg, #6366f1, #4f46e5);
+  color: #ffffff;
+  border: none;
+  padding: 12px 28px;
+  border-radius: 12px;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s;
+  box-shadow: 0 4px 16px rgba(99, 102, 241, 0.4);
+}
+
+.mna-next-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(99, 102, 241, 0.6);
+}
+
+/* ── Summary & Aptitude Assessment Report ─────────────────────────────────── */
+.mna-summary-view {
+  padding: 36px 32px;
+  text-align: center;
+  animation: mnaFadeIn 0.4s ease-out;
+}
+
+.mna-badge-circle {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(99, 102, 241, 0.4), rgba(15, 23, 42, 0.8));
+  border: 2px solid #818cf8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 38px;
+  margin: 0 auto 16px auto;
+  box-shadow: 0 0 30px rgba(99, 102, 241, 0.5);
+  animation: mnaFloat 3s ease-in-out infinite;
+}
+
+@keyframes mnaFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+.mna-summary-title {
+  font-size: 26px;
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0 0 6px 0;
+}
+
+.mna-aptitude-tag {
+  display: inline-block;
+  font-size: 16px;
+  font-weight: 700;
+  color: #a5b4fc;
+  background: rgba(99, 102, 241, 0.15);
+  border: 1px solid rgba(99, 102, 241, 0.4);
+  padding: 4px 16px;
+  border-radius: 20px;
+  margin-bottom: 20px;
+}
+
+.mna-metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+  margin-bottom: 28px;
+  text-align: left;
+}
+
+@media (max-width: 720px) {
+  .mna-metrics-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.mna-metric-card {
+  background: rgba(15, 23, 42, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 16px;
+}
+
+.mna-metric-label {
+  font-size: 12px;
+  color: #94a3b8;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+.mna-metric-val {
+  font-size: 22px;
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0;
+}
+
+/* Cognitive Skill Radar Bars */
+.mna-radar-box {
+  background: rgba(15, 23, 42, 0.45);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  padding: 20px 24px;
+  margin-bottom: 28px;
+  text-align: left;
+}
+
+.mna-radar-item {
+  margin-bottom: 14px;
+}
+
+.mna-radar-item:last-child {
+  margin-bottom: 0;
+}
+
+.mna-radar-label-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  font-weight: 600;
+  color: #cbd5e1;
+  margin-bottom: 6px;
+}
+
+.mna-radar-bar-bg {
+  height: 8px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.mna-radar-bar-fill {
+  height: 100%;
+  border-radius: 4px;
+  background: linear-gradient(90deg, #6366f1, #06b6d4);
+  transition: width 1s ease-out;
+}
+
+/* ── Modal Overlays (Tricks Vault & Leaderboard) ─────────────────────────── */
+.mna-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(8px);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.mna-modal-content {
+  background: #0f172a;
+  border: 1px solid rgba(99, 102, 241, 0.3);
+  border-radius: 18px;
+  width: 100%;
+  max-width: 650px;
+  max-height: 85vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.9);
+}
+
+.mna-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 24px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.mna-modal-header h3 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #ffffff;
+}
+
+.mna-modal-close {
+  background: none;
+  border: none;
+  color: #94a3b8;
+  cursor: pointer;
+  padding: 4px;
+}
+
+.mna-modal-close:hover {
+  color: #ffffff;
+}
+
+.mna-modal-body {
+  padding: 20px 24px;
+  overflow-y: auto;
+}
+
+/* Trick List */
+.mna-vault-item {
+  background: rgba(30, 41, 59, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 14px;
+}
+
+.mna-vault-item:last-child {
+  margin-bottom: 0;
+}
+
+.mna-vault-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: #fde047;
+  margin: 0 0 6px 0;
+}
+
+.mna-vault-formula {
+  display: inline-block;
+  background: rgba(0, 0, 0, 0.3);
+  color: #38bdf8;
+  font-family: monospace;
+  padding: 3px 8px;
+  border-radius: 6px;
+  font-size: 12px;
+  margin-bottom: 8px;
+}
+
+.mna-vault-desc {
+  font-size: 13px;
+  color: #cbd5e1;
+  line-height: 1.4;
+  margin: 0 0 8px 0;
+}
+
+.mna-vault-example {
+  background: rgba(6, 182, 212, 0.08);
+  border-left: 3px solid #06b6d4;
+  padding: 6px 12px;
+  font-size: 12px;
+  color: #a5f3fc;
+  border-radius: 0 6px 6px 0;
+}
+
+/* Leaderboard List */
+.mna-lb-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  background: rgba(30, 41, 59, 0.5);
+  border-radius: 10px;
+  margin-bottom: 8px;
+}
+
+.mna-lb-rank {
+  font-weight: 800;
+  font-size: 16px;
+  width: 32px;
+  color: #fbbf24;
+}
+
+.mna-lb-user {
+  flex-grow: 1;
+}
+
+.mna-lb-name {
+  font-weight: 700;
+  font-size: 14px;
+  color: #ffffff;
+}
+
+.mna-lb-level {
+  font-size: 11px;
+  color: #94a3b8;
+}
+
+.mna-lb-score {
+  font-weight: 800;
+  font-size: 16px;
+  color: #38bdf8;
+}
+
+/* ── Flagship Magic Number Banner on GameZone Page ────────────────────────── */
+.gz-magic-banner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 28px;
+  margin-bottom: 24px;
+  border-radius: 18px;
+  background: radial-gradient(circle at 10% 20%, rgba(99, 102, 241, 0.25) 0%, rgba(15, 23, 42, 0.85) 100%);
+  border: 1px solid rgba(250, 204, 21, 0.35);
+  box-shadow: 0 12px 35px -10px rgba(0, 0, 0, 0.6), 0 0 25px rgba(250, 204, 21, 0.15);
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.gz-magic-left {
+  max-width: 680px;
+}
+
+.gz-magic-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(250, 204, 21, 0.15);
+  color: #fde047;
+  border: 1px solid rgba(250, 204, 21, 0.4);
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  margin-bottom: 10px;
+}
+
+.gz-magic-title {
+  font-size: 24px;
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0 0 8px 0;
+  background: linear-gradient(135deg, #ffffff 40%, #fbbf24 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gz-magic-desc {
+  font-size: 14px;
+  color: #cbd5e1;
+  line-height: 1.5;
+  margin: 0 0 14px 0;
+}
+
+.gz-magic-feature-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.gz-m-tag {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #e2e8f0;
+  padding: 3px 10px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.gz-magic-launch-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: linear-gradient(135deg, #f59e0b, #d97706);
+  color: #ffffff;
+  border: none;
+  padding: 14px 28px;
+  border-radius: 14px;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.25s;
+  box-shadow: 0 4px 20px rgba(245, 158, 11, 0.4);
+  white-space: nowrap;
+}
+
+.gz-magic-launch-btn:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 8px 28px rgba(245, 158, 11, 0.6);
+  background: linear-gradient(135deg, #fbbf24, #f59e0b);
+}
