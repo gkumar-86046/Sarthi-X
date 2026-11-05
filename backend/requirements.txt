@@ -1,0 +1,18 @@
+# ─── Web Framework ────────────────────────────────────────────────────────────
+Flask==3.0.3
+flask-cors==4.0.1               # Cross-Origin Resource Sharing (for React frontend)
+
+# ─── Database ─────────────────────────────────────────────────────────────────
+mysql-connector-python==8.4.0   # MySQL driver for Python
+PyMySQL==1.1.1                  # Lightweight MySQL client (fallback / alternate)
+
+# ─── Authentication / Security ────────────────────────────────────────────────
+PyJWT==2.9.0                    # JSON Web Token (JWT) encode/decode
+bcrypt==4.2.0                   # Password hashing (bcrypt algorithm)
+python-dotenv==1.0.1            # Load environment variables from .env file
+
+# ─── Validation ───────────────────────────────────────────────────────────────
+marshmallow==3.21.3             # Request schema validation & serialization
+
+# ─── Utilities ────────────────────────────────────────────────────────────────
+Werkzeug==3.0.4                 # WSGI utilities (included with Flask, pinned for safety)
